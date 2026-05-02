@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicare - Professional Healthcare Services</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>Medicare</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Your Health is Our <span class="highlight">Priority</span></h1>
+                    <p>Experience world-class healthcare with our team of dedicated professionals. We provide comprehensive medical services with compassion and excellence.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">Book Appointment</button>
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-play"></i>
+                            Watch Video
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <h3>15+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h3>2500+</h3>
+                            <p>Happy Patients</p>
+                        </div>
+                        <div class="stat">
+                            <h3>24/7</h3>
+                            <p>Emergency Care</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="doctor-card-slider">
+                        <div class="doctor-slide active">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Sarah Johnson" onerror="this.src='https://ui-avatars.com/api/?name=Dr+Sarah+Johnson&background=4F46E5&color=fff&size=400'">
+                            <div class="doctor-info">
+                                <h4>Dr. Sarah Johnson</h4>
+                                <p>Chief Medical Officer</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>4.9</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="doctor-slide">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Michael Chen" onerror="this.src='https://ui-avatars.com/api/?name=Dr+Michael+Chen&background=10B981&color=fff&size=400'">
+                            <div class="doctor-info">
+                                <h4>Dr. Michael Chen</h4>
+                                <p>Neurologist</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="doctor-slide">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Dr. Emily Rodriguez" onerror="this.src='https://ui-avatars.com/api/?name=Dr+Emily+Rodriguez&background=F59E0B&color=fff&size=400'">
+                            <div class="doctor-info">
+                                <h4>Dr. Emily Rodriguez</h4>
+                                <p>Orthopedic Surgeon</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>4.9</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-dots">
+                            <span class="dot active" data-slide="0"></span>
+                            <span class="dot" data-slide="1"></span>
+                            <span class="dot" data-slide="2"></span>
+                        </div>
+                    </div>
+                    <div class="floating-card appointment-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <div>
+                            <h5>Next Appointment</h5>
+                            <p>Today, 2:30 PM</p>
+                        </div>
+                    </div>
+                    <div class="floating-card patients-card">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <h5>Active Patients</h5>
+                            <p>1,247</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Our <span class="highlight">Medical Center</span></h2>
+                    <p>With over 15 years of excellence in healthcare, Medicare has been at the forefront of providing comprehensive medical services. Our state-of-the-art facility and experienced medical professionals ensure you receive the best care possible.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Advanced Medical Technology</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Experienced Medical Team</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 Emergency Services</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Comprehensive Health Checkups</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">Learn More</button>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600&h=400&fit=crop" alt="Modern Medical Facility" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span class="highlight">Services</span></h2>
+                <p>Comprehensive healthcare services designed to meet all your medical needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Cardiology</h3>
+                    <p>Complete heart care with advanced diagnostic and treatment options for all cardiac conditions.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Neurology</h3>
+                    <p>Expert neurological care for brain, spine, and nervous system disorders with cutting-edge treatments.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h3>Orthopedics</h3>
+                    <p>Comprehensive bone and joint care including surgery, rehabilitation, and sports medicine.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Ophthalmology</h3>
+                    <p>Complete eye care services from routine exams to advanced surgical procedures.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lungs"></i>
+                    </div>
+                    <h3>Pulmonology</h3>
+                    <p>Specialized care for respiratory conditions and lung diseases with modern treatment methods.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>General Medicine</h3>
+                    <p>Primary healthcare services for routine checkups, preventive care, and general health management.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="doctors">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our <span class="highlight">Doctors</span></h2>
+                <p>Our experienced medical professionals are dedicated to providing you with the best care</p>
+            </div>
+            <div class="doctors-grid">
+                <div class="doctor-card-full">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Sarah Johnson" onerror="this.src='https://ui-avatars.com/api/?name=Dr+Sarah+Johnson&background=4F46E5&color=fff&size=300'">
+                    <div class="doctor-details">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p class="specialty">Chief Medical Officer & Cardiologist</p>
+                        <p class="experience">15+ Years Experience</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (127 reviews)</span>
+                        </div>
+                        <p class="bio">Specialized in interventional cardiology with expertise in complex cardiac procedures and heart disease prevention.</p>
+                        <button class="btn btn-primary">Book Appointment</button>
+                    </div>
+                </div>
+                <div class="doctor-card-full">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Michael Chen" onerror="this.src='https://ui-avatars.com/api/?name=Dr+Michael+Chen&background=10B981&color=fff&size=300'">
+                    <div class="doctor-details">
+                        <h3>Dr. Michael Chen</h3>
+                        <p class="specialty">Neurologist</p>
+                        <p class="experience">12+ Years Experience</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.8 (89 reviews)</span>
+                        </div>
+                        <p class="bio">Expert in treating neurological disorders including epilepsy, stroke, and neurodegenerative diseases.</p>
+                        <button class="btn btn-primary">Book Appointment</button>
+                    </div>
+                </div>
+                <div class="doctor-card-full">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Dr. Emily Rodriguez" onerror="this.src='https://ui-avatars.com/api/?name=Dr+Emily+Rodriguez&background=F59E0B&color=fff&size=300'">
+                    <div class="doctor-details">
+                        <h3>Dr. Emily Rodriguez</h3>
+                        <p class="specialty">Orthopedic Surgeon</p>
+                        <p class="experience">10+ Years Experience</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (156 reviews)</span>
+                        </div>
+                        <p class="bio">Specializes in joint replacement surgery and sports medicine with minimally invasive techniques.</p>
+                        <button class="btn btn-primary">Book Appointment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our <span class="highlight">Patients Say</span></h2>
+                <p>Real stories from patients who trust us with their healthcare</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The care I received at Medicare was exceptional. Dr. Johnson and her team made me feel comfortable throughout my treatment. Highly recommended!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="John Smith" onerror="this.src='https://ui-avatars.com/api/?name=John+Smith&background=6B7280&color=fff&size=60'">
+                        <div>
+                            <h4>John Smith</h4>
+                            <p>Patient since 2022</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Professional staff, modern facilities, and excellent medical care. Medicare has been my family's healthcare provider for years."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/25.jpg" alt="Maria Garcia" onerror="this.src='https://ui-avatars.com/api/?name=Maria+Garcia&background=EC4899&color=fff&size=60'">
+                        <div>
+                            <h4>Maria Garcia</h4>
+                            <p>Patient since 2020</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The orthopedic surgery I had was a complete success. Dr. Rodriguez explained everything clearly and the recovery was smooth."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="David Wilson" onerror="this.src='https://ui-avatars.com/api/?name=David+Wilson&background=8B5CF6&color=fff&size=60'">
+                        <div>
+                            <h4>David Wilson</h4>
+                            <p>Patient since 2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get in <span class="highlight">Touch</span></h2>
+                    <p>Ready to take the next step in your healthcare journey? Contact us today to schedule an appointment.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@medicare.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>123 Healthcare Ave, Medical District, NY 10001</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Hours</h4>
+                                <p>Mon-Fri: 8AM-8PM<br>Sat-Sun: 9AM-5PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Select Service</option>
+                                <option value="cardiology">Cardiology</option>
+                                <option value="neurology">Neurology</option>
+                                <option value="orthopedics">Orthopedics</option>
+                                <option value="ophthalmology">Ophthalmology</option>
+                                <option value="pulmonology">Pulmonology</option>
+                                <option value="general">General Medicine</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>Medicare</span>
+                    </div>
+                    <p>Providing exceptional healthcare services with compassion and excellence for over 15 years.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#doctors">Doctors</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Cardiology</a></li>
+                        <li><a href="#">Neurology</a></li>
+                        <li><a href="#">Orthopedics</a></li>
+                        <li><a href="#">Ophthalmology</a></li>
+                        <li><a href="#">Emergency Care</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@medicare.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Healthcare Ave, NY</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Medicare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
