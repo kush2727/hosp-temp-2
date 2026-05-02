@@ -1,8 +1,10 @@
-// Doctor Card Slider Functionality
+// Enhanced Mobile-Responsive Doctor Card Slider
 let currentSlide = 0;
 const slides = document.querySelectorAll('.doctor-slide');
 const dots = document.querySelectorAll('.dot');
 const totalSlides = slides.length;
+let autoSlideInterval;
+let isUserInteracting = false;
 
 // Function to show specific slide
 function showSlide(index) {
@@ -27,8 +29,10 @@ function showSlide(index) {
 
 // Function to go to next slide
 function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    showSlide(currentSlide);
+    if (!isUserInteracting) {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+    }
 }
 
 // Function to go to previous slide
@@ -37,18 +41,100 @@ function prevSlide() {
     showSlide(currentSlide);
 }
 
-// Auto-slide functionality
+// Start auto-slide
 function startAutoSlide() {
-    setInterval(nextSlide, 4000); // Change slide every 4 seconds
+    stopAutoSlide(); // Clear any existing interval
+    autoSlideInterval = setInterval(nextSlide, 4000);
 }
 
-// Dot click functionality
+// Stop auto-slide
+function stopAutoSlide() {
+    if (autoSlideInterval) {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = null;
+    }
+}
+
+// Dot click functionality with touch support
 dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
+    // Mouse events
+    dot.addEventListener('click', (e) => {
+        e.preventDefault();
         currentSlide = index;
         showSlide(currentSlide);
+        isUserInteracting = true;
+        stopAutoSlide();
+        setTimeout(() => {
+            isUserInteracting = false;
+            startAutoSlide();
+        }, 3000);
+    });
+    
+    // Touch events for better mobile support
+    dot.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        currentSlide = index;
+        showSlide(currentSlide);
+        isUserInteracting = true;
+        stopAutoSlide();
+        setTimeout(() => {
+            isUserInteracting = false;
+            startAutoSlide();
+        }, 3000);
     });
 });
+
+// Touch swipe functionality for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+const sliderContainer = document.querySelector('.doctor-card-slider');
+if (sliderContainer) {
+    // Touch start
+    sliderContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        isUserInteracting = true;
+        stopAutoSlide();
+    });
+    
+    // Touch end
+    sliderContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        setTimeout(() => {
+            isUserInteracting = false;
+            startAutoSlide();
+        }, 2000);
+    });
+    
+    // Mouse events for desktop
+    sliderContainer.addEventListener('mouseenter', () => {
+        isUserInteracting = true;
+        stopAutoSlide();
+    });
+    
+    sliderContainer.addEventListener('mouseleave', () => {
+        isUserInteracting = false;
+        startAutoSlide();
+    });
+}
+
+// Handle swipe gestures
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const swipeDistance = touchEndX - touchStartX;
+    
+    if (Math.abs(swipeDistance) > swipeThreshold) {
+        if (swipeDistance > 0) {
+            // Swipe right - go to previous slide
+            prevSlide();
+        } else {
+            // Swipe left - go to next slide
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+    }
+}
 
 // Initialize slider
 if (slides.length > 0) {
@@ -56,28 +142,41 @@ if (slides.length > 0) {
     startAutoSlide();
 }
 
-// Pause auto-slide on hover
-const sliderContainer = document.querySelector('.doctor-card-slider');
-if (sliderContainer) {
-    let autoSlideInterval;
-    
-    // Start auto-slide
-    function startAutoSlideWithInterval() {
-        autoSlideInterval = setInterval(nextSlide, 4000);
+// Pause auto-slide when page is not visible (battery optimization)
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        stopAutoSlide();
+    } else if (!isUserInteracting) {
+        startAutoSlide();
     }
+});
+
+// Responsive breakpoint handling
+function handleResize() {
+    // Adjust slider behavior based on screen size
+    const isMobile = window.innerWidth <= 768;
     
-    // Stop auto-slide
-    function stopAutoSlide() {
-        clearInterval(autoSlideInterval);
+    if (isMobile) {
+        // On mobile, make dots larger for better touch targets
+        dots.forEach(dot => {
+            dot.style.minWidth = '12px';
+            dot.style.minHeight = '12px';
+        });
+    } else {
+        // On desktop, use normal dot sizes
+        dots.forEach(dot => {
+            dot.style.minWidth = '';
+            dot.style.minHeight = '';
+        });
     }
-    
-    // Pause on hover, resume on mouse leave
-    sliderContainer.addEventListener('mouseenter', stopAutoSlide);
-    sliderContainer.addEventListener('mouseleave', startAutoSlideWithInterval);
-    
-    // Start the auto-slide initially
-    startAutoSlideWithInterval();
 }
+
+// Listen for resize events
+window.addEventListener('resize', handleResize);
+window.addEventListener('orientationchange', handleResize);
+
+// Initial setup
+handleResize();
 
 // Mobile Navigation Toggle
 const navToggle = document.querySelector('.nav-toggle');
